@@ -408,10 +408,79 @@ strong {
 }
 
 
+/*  */
+/*  */
+/* PED2025 page style */
+/*  */
+/*  */
 
 
 
+.two-columns {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    margin-bottom: 40px;
+}
 
+.col-left,
+.col-right {
+    width: 48%;      /* Adjust if you want narrower or wider columns */
+}
+
+.below-columns {
+    margin-top: 20px;
+}
+
+/* Optional styles to make columns look cleaner */
+.two-columns h3 {
+    margin-top: 0;
+}
+
+.abstract-section {
+    margin-top: 40px;
+}
+
+.abstract-section h3 {
+    margin-bottom: 10px;
+}
+
+.etape-section {
+    margin-top: 40px;
+}
+
+.etape-section h3 {
+    margin-bottom: 10px;
+}
+
+.etape-list {
+    list-style-type: square; /* or circle, disc, none */
+    padding-left: 20px;
+}
+
+.etape-list li {
+    margin: 6px 0;
+}
+
+.etape-list a {
+    text-decoration: none;
+    color: #004aad; /* Adjust to your theme */
+    font-weight: 500;
+}
+
+.etape-list a:hover {
+    text-decoration: underline;
+}
+
+.publicatie-link {
+    text-decoration: none;
+    color: #004aad; /* sau culoarea temei tale */
+}
+
+.publicatie-link:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
 
 
 

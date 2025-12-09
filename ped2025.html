@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PED 2025</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="./images/keg_logo.png" type="image/png">
+</head>
+
+<body>
+    <div id="header-placeholder"></div>
+
+    <main>
+        <section id="raport" class="about-section">
+
+            <h2><strong>Explicarea scenelor folosind limbaj natural</strong><br>
+            <em>Explain scenes using language</em><br>
+            <em>Engage</em></h2>
+            <br><br>
+            <div class="two-columns">
+                
+                <!-- RIGHT COLUMN -->
+                <div class="col-right">
+                    <h3>Coordonator</h3>
+                    <p>Universitatea Tehnică din Cluj-Napoca</p>
+
+                    <h3>Director de proiect</h3>
+                    <p>Prof. dr. ing. Rodica Potolea</p>
+
+                    <h3>Colectiv Coordonator</h3>
+                    <ul>
+                        <li>Drd. ing. Vlad-Andrei Negru</li>
+                        <li>Drd. ing. Andrei-Cristian Rad</li>
+                        <li>Prof. dr. ing. Camelia Lemnaru</li>
+                        <li>Prof. dr. ing. Mihaela Dînșoreanu</li>
+                    </ul>
+                </div>
+                
+                <!-- LEFT COLUMN -->
+                <div class="col-left">
+                    <h3>Partener</h3>
+                    <p>Robert BOSCH S.R.L.</p>
+
+                    <h3>Responsabil Partener</h3>
+                    <p>Dr. ing. Cătălin Golban</p>
+
+                    <h3>Colectiv Partener</h3>
+                    <ul>
+                        <li>Dr. ing. Stefan Mathe</li>
+                        <li>Iosif-Mihai Câmpean</li>
+                        <li>Larisa-Gabriela Coroamă</li>
+                        <li>Victor Macinic</li>
+                    </ul>
+                </div>
+
+                
+
+            </div>
+
+            <!-- CONTENT BELOW THE TWO COLUMNS -->
+            <div class="below-columns">
+                <h3>Date Administrative</h3>
+                <p>
+                    <strong>Contract Nr.:</strong> 132PED din 05/05/2025<br>
+                    <strong>Perioada de realizare:</strong> 05.05.2025 – 30.04.2027<br>
+                </p>
+            </div>
+
+        </section>
+        <!-- ABSTRACT SECTION -->
+        <section id="abstract" class="abstract-section">
+            <h3>Abstract</h3>
+            <p>
+                Industria mașinilor autonome îmbunătățește continuu siguranța și confortul în timpul conducerii. 
+                În plus, asistăm la o schimbare înspre apariția unor modele lingvistice multimodale foarte mari, 
+                care combină înțelegerea lingvistică cu percepția vizuală. Cercetările recente propun strategii în 
+                care se aliniază percepția vizuală cu informații textuale folosind LLM-uri multimodale pentru a 
+                spori capacitățile de generalizare și raționament.
+            </p>
+            <p>
+                Scopul acestei propuneri este dezvoltarea unui sistem nou end-to-end, Large Language Model for 
+                Autonomous Driving (LLM4AD), care utilizează atât informații vizuale cât și textuale. Pe lângă 
+                faptul că acționează ca un instrument performant de planificare a mișcării în scenarii de conducere 
+                pe autostradă, soluția preconizată s-ar evidenția printr-un grad ridicat de explicabilitate.
+            </p>
+            <p>
+                Acest lucru ar fi realizat prin utilizarea capacităților de raționament care provin din exploatarea 
+                capabilităților LLM-urilor, oferind modelului prompturi pentru a genera explicații cu privire la 
+                decizii. Aceste explicații au un rol crucial în înțelegerea și corectarea comportamentului în 
+                situații dificile. Astfel, ne propunem să extragem din modelul adânc pași de "raționament" ușor 
+                de înțeles, cu accent pe explicarea sursei erorilor de predicție spre o actualizare corectivă a 
+                modelului.
+            </p>
+            <p>
+                Vom explora noi tehnici de augmentare a datelor pentru îmbogățirea datelor adnotate video existente 
+                cu informații textuale, pentru a spori capacitățile de generalizare ale modelului.
+            </p>
+        </section>
+
+        <!-- ETAPE SECTION -->
+        <section id="etape" class="etape-section">
+            <h3>Etape</h3>
+
+            <ul class="etape-list">
+                <li><a href="etapa1.html">Etapa 1/2025 - Analiză și preprocesare de date</a></li>
+                <li>Etapa 2/2026 - Proiectarea și implementarea prototipului modelului LLM4AD, cu accent pe îmbunătățirea și evaluarea capacităților de raționament.</a></li>
+                <li>Etapa 3/2027 - Validarea modelului în scenariul relevant, utilizând datele furnizate de companie.</a></li>
+            </ul>
+        </section>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+
+
+    <!-- Load header -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const headerPlaceholder = document.getElementById("header-placeholder");
+
+            fetch("header.html")
+                .then(response => response.text())
+                .then(data => {
+                    headerPlaceholder.innerHTML = data;
+                })
+                .catch(error => console.error('Error loading header:', error));
+        });
+    </script>
+
+    <!-- Load footer -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const footerPlaceholder = document.getElementById("footer-placeholder");
+
+            fetch("footer.html")
+                .then(response => response.text())
+                .then(data => {
+                    footerPlaceholder.innerHTML = data;
+                })
+                .catch(error => console.error('Error loading footer:', error));
+        });
+    </script>
+</body>
+</html>
