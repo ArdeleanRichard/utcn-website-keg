@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Etapa 1 – Raport Cercetare</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="./images/keg_logo.png" type="image/png">
+</head>
+
+<body>
+    <!-- Header -->
+    <div id="header-placeholder"></div>
+
+    <main>
+        <section class="about-section">
+            <h2>Etapa 1</h2>
+
+
+            <p>
+                Această pagină prezintă obiectivele și direcțiile de lucru ale Etapei 1 din cadrul
+                proiectului <strong>LLM4AD – Large Language Model for Autonomous Driving</strong>.
+                Etapa curentă se concentrează pe analiza datelor, evaluarea metodelor state-of-the-art 
+                și fundamentarea unui pipeline pentru modele vizuale și multimodale.
+            </p>
+        </section>
+
+
+        <section id="obiective" class="etapa-section">
+            
+            <h3>Obiective</h3>
+            <p>
+                În această secțiune se definesc obiectivele principale și subobiectivele aferente 
+                activității de cercetare. Obiectivele acestei etape sunt aliniate cu cele definite 
+                în propunerea pentru proiect. Având în vedere stadiul incipient al proiectului, 
+                activitatea de cercetare a fost îndreptată spre analiza și procesarea seturilor 
+                de date folosite în domeniul de viziune artificială, în domeniul de procesare a 
+                limbajului natural, cât și în domeniul sistemelor multimodale care combină informația 
+                vizuală cu cea textuală.
+            </p>
+
+            <p>Pentru etapa curentă am avut în vedere următoarele obiective principale și subobiective:</p>
+
+            <!-- Obiectiv 1 -->
+            <h4>Obiectiv 1: Analiza seturilor de date de referință</h4>
+            <p><em>(aferent activităților 1.1 și 1.2 din cadrul propunerii)</em></p>
+
+            <ul>
+                <li>Identificarea și selectarea seturilor de date adecvate pentru sarcina de generare 
+                    de descrieri textuale pentru secvențe video.</li>
+                <li>Evaluarea caracteristicilor fiecărui set de date: dimensiune, tipuri de videoclipuri/imagini, 
+                    diversitatea datelor, formatul datelor de intrare și al adnotărilor.</li>
+                <li>Determinarea relevanței și calității adnotărilor textuale existente în raport cu 
+                    obiectivele proiectului.</li>
+                <li>Stabilirea criteriilor de selecție a setului final de date pentru antrenarea și testarea sistemului.</li>
+                <li>Dezvoltarea pipeline-ului de extragere și sampling a cadrelor video.</li>
+                <li>Structurarea datelor într-un format compatibil cu modelele vizuale și multimodale utilizate 
+                    ulterior (ex. extragerea de embedding-uri, extragere de cadre din videoclipuri).</li>
+                <li>Uniformizarea datelor atât din punct de vedere textual, cât și vizual.</li>
+            </ul>
+
+            <!-- Obiectiv 2 -->
+            <h4>Obiectiv 2: Analiza metodelor de tip state-of-the-art</h4>
+
+            <ul>
+                <li>Identificarea și selectarea modelelor state-of-the-art pentru interpretarea scenelor video 
+                    folosind text, atât ca performanță, cât și ca eficiență.</li>
+                <li>Analiza metodelor de combinare a trăsăturilor video cu cele textuale.</li>
+                <li>Analiza practicilor de interpretare a predicțiilor modelelor.</li>
+            </ul>
+        </section>
+
+        <section id="publicatii" class="etapa-section">
+            <h3>Publicații</h3>
+
+            <p>
+                <a href="pdfs/VISION-RISK.pdf" download class="publicatie-link">
+                    Andrei Constantin, Vlad-Andrei Negru, Camelia Lemnaru, Rodica Potolea. (2025). 
+                    <strong>VISION-RISK: Vision-Language Model for Risk Assessment in Autonomous Driving.</strong> 
+                    In 2025 IEEE 21st International Conference on Intelligent Computer Communication and Processing (ICCP).
+                </a>
+            </p>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Load Header -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const headerPlaceholder = document.getElementById("header-placeholder");
+
+            fetch("header.html")
+                .then(response => response.text())
+                .then(data => {
+                    headerPlaceholder.innerHTML = data;
+                })
+                .catch(error => console.error("Error loading header:", error));
+        });
+    </script>
+
+    <!-- Load Footer -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const footerPlaceholder = document.getElementById("footer-placeholder");
+
+            fetch("footer.html")
+                .then(response => response.text())
+                .then(data => {
+                    footerPlaceholder.innerHTML = data;
+                })
+                .catch(error => console.error("Error loading footer:", error));
+        });
+    </script>
+</body>
+</html>
