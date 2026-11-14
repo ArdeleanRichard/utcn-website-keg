@@ -451,7 +451,7 @@ strong {
 
 .publication-section {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 24px;
     width: 100%;
     margin: auto;
@@ -983,4 +983,15 @@ main > :last-child > :last-child,
 main > :last-child > :last-child > :last-child,
 main > :last-child > :last-child > :last-child > :last-child {
     margin-bottom: 0;
+}
+
+/* Highlighted publications: two per row, matching the list of publications */
+.publication-section {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+@media (max-width: 600px) {
+    .publication-section {
+        grid-template-columns: 1fr;
+    }
 }
