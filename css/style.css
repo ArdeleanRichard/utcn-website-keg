@@ -1,3 +1,24 @@
+/* Design tokens: change a value here to update every page */
+:root {
+    --accent: #ffa64d; /* lighter tint of the KEG logo orange, for decorative bars */
+    --link: #e06f00; /* deeper orange for links and interactive text */
+    --text: #222;
+    --muted: #666;
+    --border: #e5e5e5;
+    --radius: 10px;
+    --gap: 24px;
+    --h2: 30px;
+    --h3: 22px;
+}
+
+a {
+    color: var(--link);
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
 /* css/style.css */
 html, body {
     height: 100%; /* Make sure the body and html elements take the full height of the page */
@@ -6,6 +27,11 @@ html, body {
 
 body {
     font-family: Arial, sans-serif;
+}
+
+/* Space between the page content and the footer */
+#footer-placeholder {
+    margin-top: 60px;
 }
 
 /* Style for the header and footer */
@@ -65,7 +91,7 @@ body {
 main {
     flex: 1; /* This ensures the main content takes up all available space */
     margin: auto;
-    max-width: 800px;
+    max-width: 1100px; /* same content width on every page */
 }
 
 @media screen and (max-width: 765px) {
@@ -73,6 +99,7 @@ main {
         max-width: 90vw;
     }
 }
+
 
 
 h1 {
@@ -83,12 +110,17 @@ h2 {
     color: #333;
     margin-bottom: 0.5em;
     text-align: center;
-    font-size: 30px;
+    font-size: var(--h2);
     padding-top: 20px;
 }
 
 h3 {
     color: #444;
+    font-size: var(--h3);
+}
+
+.square-list {
+    list-style-type: square;
 }
 
 nav a {
@@ -119,7 +151,7 @@ ul li {
 }
 
 strong {
-    color: orangered;
+    color: var(--link);
 }
 
 
@@ -196,11 +228,11 @@ strong {
 }
 
 .member-info .email, .member-info .phone {
-    color: orangered;
+    color: var(--link);
 }
 
 .member-info a {
-    color: orangered;
+    color: var(--link);
     text-decoration: none;
 }
 
@@ -215,27 +247,138 @@ strong {
 
 
 
-.students li, .phd-graduates li {
-    background: #fff;
-    margin: 8px 0;
-    padding: 16px;
-    border-radius: 4px;
-    border: 1px solid #ddd;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    font-size: 16px;
-    color: #444;
-    font-weight: bold;
+/* Team cards: centered stacked layout in a responsive grid */
+.staff-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--gap);
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
 }
 
-.phd-graduates-section ul li, .phd-students-section ul li {
-    margin-bottom: 20px;
+@media (max-width: 900px) {
+    .staff-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .staff-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+.staff-section .member-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: 0;
+    padding: 28px 22px;
+    max-width: none;
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+    border-top: 4px solid var(--accent);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.staff-section .member-info:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
+}
+
+.staff-section .member-photo {
+    width: 120px;
+    height: 120px;
+    margin: 0 0 18px;
+    border: none;
+}
+
+.staff-section .member-info > div {
+    width: 100%;
+}
+
+.staff-section .member-info p {
+    margin: 8px 0;
+    text-align: center;
+    overflow-wrap: anywhere;
+}
+
+.staff-section .member-info .name {
+    font-size: 17px;
+    line-height: 1.3;
+}
+
+.staff-section .member-info .title {
+    display: block;
+    font-weight: normal;
+    font-style: italic;
+    font-size: 14px;
+    color: #666;
+}
+
+.staff-section .member-info .position {
+    color: #666;
+    font-size: 14px;
+}
+
+.staff-section .member-info .scholar {
+    margin-top: 12px;
+}
+
+.staff-section .member-info .scholar a {
+    display: inline-block;
+    padding: 6px 14px;
+    border: 1px solid var(--link);
+    border-radius: 999px;
+    font-size: 13px;
+}
+
+.staff-section .member-info .scholar a:hover {
+    background: var(--link);
+    color: #fff;
+    text-decoration: none;
+}
+
+/* PhD students and graduates: cards in a 3-column grid */
+.phd-students-section ul,
+.phd-graduates-section ul {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--gap);
+    list-style: none;
+    padding: 0;
+    margin: 0 0 30px;
+}
+
+.phd-students-section li,
+.phd-graduates-section li {
     background: #fff;
-    padding: 15px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    padding: 18px;
+    border-radius: var(--radius);
+    font-weight: bold;
+    border: 1px solid var(--border);
+    border-top: 4px solid var(--accent);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.08);
     text-align: center;
 }
+
+@media (max-width: 900px) {
+    .phd-students-section ul,
+    .phd-graduates-section ul {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .phd-students-section ul,
+    .phd-graduates-section ul {
+        grid-template-columns: 1fr;
+    }
+}
+
 
 
 
@@ -258,12 +401,12 @@ strong {
 
 .research-section h3 {
     font-size: 24px;
-    color: orangered;
+    color: var(--link);
 }
 
 .research-section h4 {
     font-size: 24px;
-    color: orangered;
+    color: var(--link);
     text-align: center;
 }
 
@@ -290,13 +433,13 @@ strong {
 
 
 .research-section a {
-    color: orangered;
+    color: var(--link);
 }
 .projects-section a {
-    color: orangered;
+    color: var(--link);
 }
 .datasets-section a {
-    color: orangered;
+    color: var(--link);
 }
 
 /*  */
@@ -307,73 +450,133 @@ strong {
 
 
 .publication-section {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center; /* Center the content horizontally */
-    gap: 40px; /* Space between the boxes */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
     width: 100%;
-    margin: auto; /* Center the entire container on the page */
-    max-width: 90vw; /* Only applies for screen widths below 765px */
+    margin: auto;
+}
+
+@media (max-width: 900px) {
+    .publication-section {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .publication-section {
+        grid-template-columns: 1fr;
+    }
 }
 
 
 .highlighted-publication {
-    background-color: #fef7e3;
-    border-left: 5px solid #ffb300;
-    padding: 15px 15px 3px 15px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: calc(33.33% - 40px); /* Adjust for three columns, minus gap */
-    min-width: 200px; /* Ensures items don't shrink too small on smaller screens */
-    max-width: 400px; /* Limits the maximum width per item */
-    flex-grow: 1; /* Allows items to grow equally */
-    flex-shrink: 0; /* Prevents shrinking */
+    position: relative;
+    cursor: pointer;
+    background: #fff;
+    border: 1px solid var(--border);
+    border-top: 4px solid var(--link);
+    padding: 24px;
+    border-radius: var(--radius);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    width: 100%;
+    min-width: 0;
+    max-width: none;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-
-.highlighted-publication .authors {
-    font-size: 14px;
-    color: #555;
-}
-.highlighted-publication .details {
-    font-size: 12px;
-    color: #777;
+.highlighted-publication:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
 }
 
 .highlighted-publication .title {
     font-size: 18px;
     font-weight: bold;
-    padding-bottom: 12px;
+    line-height: 1.35;
+    margin-bottom: 10px;
 }
 
 .highlighted-publication .title a {
-    color: orangered;
+    color: var(--text);
+    text-decoration: none;
+}
+
+.highlighted-publication .title a:hover {
+    color: var(--link);
+    text-decoration: underline;
+}
+
+.highlighted-publication .authors {
+    font-size: 14px;
+    color: var(--muted);
+    margin-bottom: 14px;
+}
+
+.highlighted-publication .details {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin-top: auto;
+    font-size: 12px;
+}
+
+.highlighted-publication .details p {
+    margin: 0;
+    color: #555;
+}
+
+.highlighted-publication .title a {
+    color: var(--link);
 }
 
 .publication-section2 {
     display: grid;
     flex-wrap: wrap;
     justify-content: center; /* Center the content horizontally */
-    gap: 20px; /* Space between the boxes */
+    gap: 12px; /* Space between the boxes */
     width: 100%;
     margin: auto; /* Center the entire container on the page */
     max-width: 90vw; /* Only applies for screen widths below 765px */
 }
 
 .simpler-publication {
-    margin-bottom: 3%;
-    border-radius: 8px;
-    text-align: justify;
+    background: #fff;
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--accent);
+    border-radius: var(--radius);
+    padding: 16px 18px;
+    margin: 0;
+    text-align: left;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    transition: box-shadow 0.2s ease;
+}
+
+.simpler-publication:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.year-heading {
+    font-size: var(--h3);
+    color: #333;
+    margin: 22px 0 10px;
+    padding-bottom: 4px;
+    border-bottom: 2px solid var(--accent);
 }
 
 .simpler-publication .title{
-    font-size: 20px;
-    color: #555;
-    margin-bottom: 5px;
+    font-size: 17px;
+    font-weight: bold;
+    color: #222;
+    line-height: 1.35;
+    margin-bottom: 6px;
 }
 
 .simpler-publication .title a{
-    color: #555;
+    color: var(--link);
 }
 
 .simpler-publication .authors {
@@ -387,6 +590,34 @@ strong {
     color: #555;
 }
 
+
+@media (max-width: 768px) {
+    .publication-section {
+        gap: 24px;
+    }
+
+    .highlighted-publication {
+        width: 100%;
+        max-width: none;
+        min-width: 0;
+    }
+
+    .simpler-publication {
+        text-align: left;
+    }
+
+    .simpler-publication .title {
+        font-size: 17px;
+    }
+
+    .simpler-publication .authors {
+        font-size: 14px;
+    }
+
+    .simpler-publication .details {
+        font-size: 13px;
+    }
+}
 
 .dataset-section {
     margin-bottom: 30px;
@@ -415,3 +646,341 @@ strong {
 
 
 
+
+
+/* PED 2025 page: same spacing rhythm as the other pages */
+.about-section,
+.abstract-section,
+.etape-section {
+    margin-bottom: 40px;
+}
+
+.about-section h2 {
+    padding-top: 0;
+    line-height: 1.4;
+}
+
+.two-columns {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--gap);
+    margin-bottom: 32px;
+}
+
+.col-left,
+.col-right {
+    padding: 4px 0;
+}
+
+.below-columns {
+    margin-top: 8px;
+}
+
+.abstract-section p,
+.below-columns p {
+    line-height: 1.6;
+    margin: 0 0 14px;
+}
+
+.etape-list {
+    padding-left: 20px;
+}
+
+.etape-list li {
+    margin-bottom: 8px;
+    line-height: 1.5;
+}
+
+@media (max-width: 600px) {
+    .two-columns {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Whole highlighted card opens the publication link */
+.highlighted-publication .title a::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: var(--radius);
+}
+
+/* Whole list entry opens its link, when the entry has one */
+.simpler-publication {
+    position: relative;
+}
+
+.simpler-publication:has(.title a) {
+    cursor: pointer;
+}
+
+.simpler-publication .title a::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: var(--radius);
+}
+
+/* List of publications: tidier entries */
+.simpler-publication {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.simpler-publication:hover {
+    transform: translateY(-2px);
+}
+
+.simpler-publication .title {
+    margin-bottom: 8px;
+}
+
+.simpler-publication .authors {
+    font-size: 14px;
+    color: var(--muted);
+    margin-bottom: 8px;
+}
+
+.simpler-publication .details {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px 16px;
+    font-size: 13px;
+    color: var(--muted);
+}
+
+/* List of publications: neutral accents, orange only on hover */
+.simpler-publication {
+    border-left: 4px solid #ccc;
+    margin: 0;
+}
+
+.simpler-publication .title a {
+    color: var(--text);
+    text-decoration: none;
+}
+
+.simpler-publication .title a:hover {
+    color: var(--link);
+    text-decoration: underline;
+}
+
+.year-heading {
+    border-bottom: 2px solid #ddd;
+}
+
+/* List of publications: compact, quieter, two columns on wide screens */
+.publication-section2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+}
+
+.publication-section2 .year-heading {
+    grid-column: 1 / -1;
+    font-size: 18px;
+    margin: 14px 0 6px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid #ddd;
+}
+
+.simpler-publication {
+    padding: 12px 16px;
+    transition: none;
+}
+
+.simpler-publication:hover {
+    transform: none;
+    box-shadow: none;
+}
+
+.simpler-publication .title {
+    font-size: 16px;
+    margin-bottom: 6px;
+}
+
+.simpler-publication .authors {
+    font-size: 13px;
+    margin-bottom: 6px;
+}
+
+@media (max-width: 900px) {
+    .publication-section2 {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Section titles are centred on every page */
+h2,
+.about-section h2,
+.our-team {
+    text-align: center;
+}
+
+/* The List of Publications title sits inside the grid, so it spans the full width */
+.publication-section2 > h2 {
+    grid-column: 1 / -1;
+    text-align: center;
+}
+
+/* Space between the Highlighted Publications cards and the List of Publications */
+.publication-section {
+    margin-bottom: 40px;
+}
+
+/* Contact lines on team cards: label-style rows, same information */
+.staff-section .member-info .email,
+.staff-section .member-info .phone {
+    display: block;
+    width: 100%;
+    margin: 4px 0;
+    padding: 0;
+    font-size: 13px;
+    color: var(--muted);
+    box-sizing: border-box;
+    overflow-wrap: anywhere;
+}
+
+.staff-section .member-info .email a,
+.staff-section .member-info .phone a {
+    color: var(--link);
+    font-weight: bold;
+}
+
+/* Guaranteed gap between Highlighted Publications and the List of Publications */
+.publication-section {
+    margin-bottom: 40px !important;
+}
+
+.publication-section + .publication-section2 {
+    margin-top: 40px;
+}
+
+/* Space between the Highlighted Publications title and its cards */
+h2 + .publication-section {
+    margin-top: 28px;
+}
+
+/* Highlighted publications: clean white card (option 1) */
+.highlighted-publication {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-top: 3px solid var(--accent);
+    border-radius: var(--radius);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.07);
+    padding: 22px 22px 20px;
+}
+
+.highlighted-publication .title {
+    font-size: 17px;
+    font-weight: bold;
+    line-height: 1.35;
+    margin-bottom: 10px;
+}
+
+.highlighted-publication .authors {
+    font-size: 14px;
+    color: var(--muted);
+    margin-bottom: 12px;
+}
+
+.highlighted-publication .details {
+    font-size: 13px;
+    gap: 3px;
+}
+
+.highlighted-publication .details p {
+    color: var(--muted);
+}
+
+/* PhD students and graduates: softer cards */
+.phd-students-section li,
+.phd-graduates-section li {
+    background: #fff;
+    border: 1px solid #eee;
+    border-top: 1px solid #eee;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    padding: 14px 16px;
+    font-weight: normal;
+    font-size: 15px;
+    color: #444;
+}
+
+/* List of publications: each detail on its own line, same order as the highlighted cards */
+.simpler-publication .details {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    font-size: 13px;
+    color: var(--muted);
+}
+
+/* Tone down the orange: decoration is neutral grey, orange is kept for links and hover */
+.staff-section .member-info {
+    border-top: 4px solid #ddd;
+}
+
+.highlighted-publication {
+    border-top: 3px solid #ddd;
+}
+
+.highlighted-publication:hover .title a,
+.simpler-publication:hover .title a {
+    color: var(--link);
+}
+
+/* Consistent page rhythm: same gap under the header and above the footer on every page */
+main {
+    padding-top: 32px;
+}
+
+h2 {
+    padding-top: 0;
+}
+
+main > section:last-child,
+main > div:last-child,
+main > h2:last-child {
+    margin-bottom: 0;
+}
+
+#footer-placeholder {
+    margin-top: 60px;
+}
+
+/* Titles use the same spacing everywhere: no default or page-specific margins above, one gap below */
+h2 {
+    margin: 0 0 16px;
+}
+
+.our-team {
+    margin: 0 0 16px;
+}
+
+.about-section h2,
+.publication-section2 > h2 {
+    margin: 0 0 16px;
+    padding-top: 0;
+}
+
+/* Final title and footer rules: override the leftovers found in the audit */
+.research-section h2 {
+    padding-top: 0;
+    margin: 0 0 16px;
+}
+
+h2 + .publication-section {
+    margin-top: 0;
+}
+
+.phd-students-section ul,
+.phd-graduates-section ul {
+    margin-bottom: 0;
+}
+
+/* Nothing inside the last block of a page adds space above the footer */
+main > :last-child,
+main > :last-child > :last-child,
+main > :last-child > :last-child > :last-child,
+main > :last-child > :last-child > :last-child > :last-child {
+    margin-bottom: 0;
+}

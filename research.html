@@ -10,21 +10,20 @@
 <body>
     <div id="header-placeholder"></div>
 
-
     <main>
         <section id="research" class="research-section">
             
-            <h2>Domains of interest</h2>
+            <h2>Domains of Interest</h2>
 
             <h3>Data Engineering</h3>
             <p><b>Practical Approaches:</b></p>
-            <ul style="list-style-type: square;">
+            <ul class="square-list">
                 <li>Data Mining application prototypes for both structured data (forecasting time series, generating synthetic data, assisted medical diagnosis, spam detection, signature recognition) and unstructured data (knowledge extraction from IoT big data, opinion mining, community detection, semi-supervised text labelling, contradiction detection).</li>
                 <li>Business Intelligence application prototypes dealing with heterogeneous data integration by ontology-driven, (semi-) automatic design of unified data structures and automatic design of the corresponding ETL processes.</li>
             </ul>
     
             <p><b>In the field of Knowledge Extraction from Data, we proposed techniques for:</b></p>
-            <ul style="list-style-type: square;">
+            <ul class="square-list">
                 <li>Handle incomplete records and eliminate irrelevant or redundant information, managing imbalanced class distributions and error costs.</li>
                 <li>Address complexities associated with Big Data, including algorithm selection, model optimization, and performance metric identification.</li>
                 <li>Forecast time series data, generate artificial datasets, and perform schema mapping and data fusion.</li>
@@ -32,11 +31,13 @@
             </ul>
     
             <p><b>The proposed techniques have been applied for developing solutions in various areas:</b></p>
-            <ul style="list-style-type: square;">
+            <ul class="square-list">
                 <li><i>Near real-time sensors data processing:</i> We designed a near real-time sensor management solution, focusing on technological specifics to ensure efficient data handling and processing for rapid decision-making.</li>
                 <li><i>Recommendation Systems:</i> Our scalable recommendation system leverages machine learning to forecast device usage based on historical sensor data. We have also developed context-sensitive, semantic-driven recommendation systems tailored for applications like online advertising and tourism.</li>
                 <li><i>IoT device usage characterisation: </i>Using machine learning, we created a novel solution to characterize IoT device usage patterns, enabling more efficient energy resource management through accurate usage profiling.</li>
                 <li><i>Forecasting time series data: </i>Our forecasting methods support time series data with varying levels of intermittency, tested on both real-world and synthetically generated datasets</li>
+                <li><i>Predictive maintenance:</i> Forecasting remaining useful life (RUL) of industrial equipment from sensor data, and exploring strategies for when to schedule maintenance.</li>
+                <li><i>Federated learning:</i> Exploring how models can be trained across distributed data sources without centralizing the raw data.</li>
                 <li><i>Topic Extraction and Representation:</i> Identifying the topic polarity in a given document; projecting (very) large (un)structured data to relevant dimensions and providing representation to allow knowledge extraction.</li>
                 <li><i>Community Detection:</i> Identifying clusters from implicit and/or explicit connections; community detection in social data; opinion-driven community detection.</li>
                 <li><i>User Profiling:</i> We develop methods to group individuals by shared characteristics, uncover patterns across various profiles, and predict trends and behaviors, with applications in educational domains and IoT usage analytics.</li>
@@ -44,16 +45,15 @@
                 <li><i>Medical Decision Support Systems:</i> Assisting medical diagnosis in prostate cancer and rheumatoid diseases.</li>
             </ul>
 
-            
             <h3>Natural Language Processing</h3>
             <p><b>Practical Approaches:</b></p>
-            <ul style="list-style-type: square;">
+            <ul class="square-list">
                 <li>Employing latest state-of-the-art methods for various NLP tasks such as text classification, named entity recognition and text generation, with approaches from the domain of Deep Learning.</li>
                 <li>Our work focuses both on a scientific research dimension, and on practical real world problems, as our proposed solutions are scaled and applied into industry.</li>
             </ul>
 
             <p><b>Scientific topics of interest:</b></p>
-            <ul style="list-style-type: square;">
+            <ul class="square-list">
                 <li>Enhancing and studying the <i>logic reasoning</i> capabilities of Large Language Models (LLMs) for Natural Language Inference (NLI) tasks in an unsupervised manner.</li>
                 <li>Exploring the <i>cross-lingual capabilities</i> of language models in low data settings, increasing the degree of transfer on the language level and task level.</li>
                 <li>Leveraging the inherent explanations generated by Large Multimodal Model (LMMs) for Autonomous Driving tasks, considering <i>scene understanding, planning and behavioral reasoning.</i></li>
@@ -63,7 +63,7 @@
             </ul>
 
             <p><b>Prototypes and solutions delivered for real world problems:</b></p>
-            <ul style="list-style-type: square;">
+            <ul class="square-list">
                 <li>AI Assistant for understanding and classifying multilingual online recipes for the cooking domain, the solution being used for smart ovens.</li>
                 <li>Sentiment Analysis for client conversations in the banking domain, focusing on the Romanian language.</li>
                 <li>AI Home Assistant for Romanian, trained on a wide range of tasks and intents.</li>
@@ -71,83 +71,55 @@
 
             <h3>Neuroscience</h3>
             <p><b>Practical Approaches:</b></p>
-            <ul style="list-style-type: square;">
+            <ul class="square-list">
                 <li>Machine learning solutions for the analysis of neuronal data (including traditional and deep learning approaches) to further our understanding of the brain.</li>
             </ul>
 
             <p><b>In the field of computational neuroscience, we proposed techniques for:</b></p>
-            <ul style="list-style-type: square;">
-                <li><i><a href="https://en.wikipedia.org/wiki/Spike_sorting" target="_blank">Spike sorting</a>:</i> Identifying individual neuron activity from extracellular recordings by isolating and classifying action potentials (spikes). This process is critical for understanding neural communication patterns and is often the first step in analyzing data from electrophysiological studies. 
-                    Our group has designed and/or validated various methods for spike detection (source separation using GANs), feature extraction (<a href="https://ieeexplore.ieee.org/document/9733683" target="_blank">weighted PCA</a>, <a href="https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0282810" target="_blank">autoencoders</a>, <a href="https://www.nature.com/articles/s41467-020-20539-9" target="_blank">Superlet transform</a>) and clustering (community detection-based methods, <a href="https://www.frontiersin.org/journals/computational-neuroscience/articles/10.3389/fncom.2023.1019637/full" target="_blank">new methods</a>).</li>
+            <ul class="square-list">
+                <li><i>Spike sorting:</i> Identifying individual neuron activity from extracellular recordings by isolating and classifying action potentials (spikes). This process is critical for understanding neural communication patterns and is often the first step in analyzing data from electrophysiological studies. 
+                    Our group has designed and/or validated various methods for spike detection (source separation using GANs), feature extraction (weighted PCA, autoencoders, Superlet transform) and clustering (community detection-based methods, new methods).</li>
                 
-                <li><i><a href="https://en.wikipedia.org/wiki/Bursting" target="_blank">Burst detection</a>:</i> Recognizing sequences of rapid spikes occurring closely in time, which indicate bursts of neuronal activity. These bursts are thought to play key roles in signal transmission and information processing within neural circuits. 
-                    Our group has designed a <a href="https://ieeexplore.ieee.org/document/10398703" target="_blank">new method</a> for the detection of bursts.
+                <li><i>Burst detection:</i> Recognizing sequences of rapid spikes occurring closely in time, which indicate bursts of neuronal activity. These bursts are thought to play key roles in signal transmission and information processing within neural circuits. 
+                    Our group has designed a new method for the detection of bursts.
                 
-                <li><i><a href="" target="_blank">LFP data analysis</a>:</i> Analyzing large-scale, coordinated fluctuations in local field potentials (LFPs), which reflect synchronized neural activity across populations of neurons. 
-                    Our group has designed methods based on <a href="https://ieeexplore.ieee.org/document/9266151" target="_blank">symbolic analysis</a> and <a href="https://ieeexplore.ieee.org/document/10053960" target="_blank">microstate analysis</a> for the detection of anaethesia in LFP data.
+                <li><i>LFP data analysis:</i> Analyzing large-scale, coordinated fluctuations in local field potentials (LFPs), which reflect synchronized neural activity across populations of neurons. 
+                    Our group has designed methods based on symbolic analysis and microstate analysis for the detection of anaethesia in LFP data.
                 
-                    <li><i><a href="https://en.wikipedia.org/wiki/Electroencephalography" target="_blank">EEG data analysis</a>:</i> The study of brain activity patterns through processing and interpreting electrical signals recorded from the scalp, which helps to understand neural dynamics, cognitive processes, and brain disorders by examining signal features like frequency, power, and event-related changes.
-                    Our group has designed methods based on <a href="https://ieeexplore.ieee.org/document/10398607" target="_blank">symbolic analysis-based</a> for the interpretation of EEG data and <a href="https://ieeexplore.ieee.org/document/9266157" target="_blank">GAN-based</a> for the enhancement of classification.
+                    <li><i>EEG data analysis:</i> The study of brain activity patterns through processing and interpreting electrical signals recorded from the scalp, which helps to understand neural dynamics, cognitive processes, and brain disorders by examining signal features like frequency, power, and event-related changes.
+                    Our group has designed methods based on symbolic analysis-based for the interpretation of EEG data and GAN-based for the enhancement of classification.
                     
-                <li><i><a href="" target="_blank">Functional networks</a>:</i> Mapping and examining networks of brain regions or neurons based on their activity correlations. Functional networks offer insights into how different parts of the brain interact dynamically to perform complex tasks and are essential for studying brain connectivity and functionality.
+                <li><i>Functional networks:</i> Mapping and examining networks of brain regions or neurons based on their activity correlations. Functional networks offer insights into how different parts of the brain interact dynamically to perform complex tasks and are essential for studying brain connectivity and functionality.
                     Our group has focused on the study of graph neural networks within this direction of research, we have analysed methods for the extraction of relevant information from complete weighted graphs and approaches on how to infer graphs from unstructured data using graph neural networks.
-            
-                
-                
-
-                
 
             </ul>
 
-            <ul style="list-style-type: square;">
+            <ul class="square-list">
             </ul>
             
-            <p>For the neuroscience domain, our group collaborates with the Transylvanian Institute of Neuroscience (<a href="https://tins.ro/" target="_blank">TINS</a>), specifically with Dr. Eng. Raul-Cristian Muresan and Dr. Eng. Vlad Vasile Moca.</p>
+            <p>For the neuroscience domain, our group collaborates with the Transylvanian Institute of Neuroscience (TINS), specifically with Dr. Eng. Raul-Cristian Muresan and Dr. Eng. Vlad Vasile Moca.</p>
 
         <section class="projects-section">
-            <h2>Projects</h2>
-    
-            <h3>SEArCH - Adaptive eLearning Systems using Concept Maps</h3>
-            <p><b>National grant funded by CNMP Program 4: Research partnership for priority domains, (2008-2011)</b></p>
-            <p>Homepage: <a href="http://search.utcluj.ro/" target="_blank">http://search.utcluj.ro/</a></p>
-            <p>The goal of the project is to define a model of an adaptive e-learning environment, using Concept Maps. Adaptive e-learning systems are the newest paradigm in modern learning approaches. Adaptive presentation refers to content segmentation and management according to the student particularities and goals, and is based on identification of the user's type. One of the key factors in such systems is the correct and continuous identification of the user learning style, to provide the most appropriate content presentation to each individual user. The means of attaining such objectives are the initial evaluation of the user for identification of style and level of expertise. Based on those measurements, the content is presented according to the type, providing an initial curriculum segmentation and adapted presentation. During the learning process, based on dynamic on-going measurements, the user evaluation is continuously refined, in the attempt of fitting the best the particular needs. Thus, the model ultimate goal is to correct identify user's type, and continuously adapt the content (both in quantity and difficulty) according to its type. Currently, we have investigated various ways for identifying the initial user typology, based on static features. We proposed two solutions: using a Bayesian network, and by employment of a clustering method to determine the different groups of learning typologies, corresponding to the theoretical learning styles present in literature, based on the pretest (psycho-pedagogical).</p>
-    
-            <h3>ArhiNet - Integrated System for Developing Semantically-Enhanced Archive Content</h3>
-            <p><b>National grant funded by CNMP Program 4: Research partnership for priority domains, (2007-2010)</b></p>
-            <p>Homepage: <a href="http://coned.utcluj.ro/ARHINET/arch.html" target="_blank">http://coned.utcluj.ro/ARHINET/arch.html</a></p>
-            <p>This inter-disciplinary project addresses the study, development and management of interactive e-content for digital enhancement of cultural heritage. The project aims at the study and development of an integrated system for creating and managing archival content based on semantic enhancements. The domain ontology-enhanced content allows for semantically relevant information retrieval. The project also aims at the development of an information mining subsystem and reasoning mechanisms to identify new correlations that will be added to the domain knowledge.</p>
-    
-            <h3>IntelPro - Intelligent System for Assisting the Therapeutic Decision at Patients with Prostate Cancer</h3>
-            <p><b>National research grant funded by ANCS, CEEX - INFOSOC, (2005-2008)</b></p>
-            <p>Homepage: <a href="http://cv.utcluj.ro/intelpro/" target="_blank">http://cv.utcluj.ro/intelpro/</a></p>
-            <p>The goal of our task in the project was to provide robust solutions which can be used to assist the physicians in the diagnosis of prostate cancer, or as support in the learning process. The data-mining system speeds up the diagnosis process and improves the accuracy of the diagnosis. The system could be extended to suggest possible treatments or courses of action in a particular case. It is not intended to replace the physician, but to support him. The developed components have tried to tackle some of the particularities involved in mining medical problems. Although the techniques we adopted so far are aimed at "solving" prostate cancer problems, they are not restricted to this field. The methods can be extended to different medical problems, or we can go even further and apply them in areas like loan applications, oil-slick detection, and so on.</p>
-    
-            <h3>GridMOSI - Virtual Organization Using Grid Technology for High Performance Modeling, Simulation and Optimization</h3>
-            <p><b>National research grant funded by ANCS, CEEX, (2005-2008)</b></p>
-            <p>Homepage: <a href="http://wiki.gridmosi.ro/wiki/GridMOSI:Info" target="_blank">http://wiki.gridmosi.ro/wiki/GridMOSI:Info</a></p>
+            <h2>Recent Projects</h2>
+
+            <h3>RoMIND - Mental Health in a Rapidly Changing Society</h3>
+            <p><b>Centre of Excellence (CoEx), PNCDI IV, project PN-IV-P6-6.1-CoEx-2024-0139 (2026-2030)</b></p>
+            <p>A multilevel study of mental health, from genes and molecules to brain networks and psychosocial systems, run as a national Centre of Excellence in Neuroscience and Mental Health. It is a single large-scale study with common protocols and infrastructure, bringing together a national network of universities, Romanian Academy institutes and hospitals, with more than 70 researchers and clinicians across nine institutions in Cluj-Napoca, Timișoara, București and Iași.</p>
+
+            <h3>SENTHICOM - SENse, THInk and COMmunicate</h3>
+            <p><b>PNRR, PIIEC ME/CT, project code 10.PI/I4/C9 (2026-2028)</b></p>
+            <p>Building modeling, simulation and validation tools, and related applications, for NXP automotive processors, including a 5nm automotive processor and a 4D radar platform. The work covers NXP products in radar, automotive, and 5G/B5G/6G, with domain-specific hardware accelerators and the related firmware, drivers and middleware, aiming to reduce SoC power consumption. UTCN develops the modeling, simulation and validation environment, with activities covering multiphysics modeling and testing, EMC, HW-SW co-design with accelerators, and AI/ML for energy-efficient hardware. The project has seven partners.</p>
+
+            <h3>LLM4AD - Scene Explanation Using Natural Language (PED 2025)</h3>
+            <p><b>PED 2025, contract 132PED (2025-2027)</b></p>
+            <p>An end-to-end system that uses visual and textual input to plan motion in highway driving scenarios, with explanations produced by prompting a large language model to justify its decisions, so that the sources of prediction errors can be understood and used for model updates. The project also explores data augmentation to enrich video annotations with textual information. Planned stages: 2025 data analysis and preprocessing; 2026 prototype design and implementation with a focus on reasoning; 2027 validation in the target scenario using company-provided data. Coordinated by UTCN with Robert Bosch S.R.L. as partner; project director Rodica Potolea, with Vlad-Andrei Negru, Andrei-Cristian Rad, Camelia Lemnaru and Mihaela Dînșoreanu on the team.</p>
+
+            <h3>HRIA - Romanian Artificial Intelligence Hub</h3>
+            <p><b>PoCIDIF 2021-2027 (ERDF), 2025-2029</b></p>
+            <p>HRIA is a national artificial intelligence ecosystem in Romania, implemented with six partner universities, including UTCN, and eight innovative SMEs. It aims to bring Romania's AI research community together, create national resources for AI research, development and innovation, and link research results to concrete economic impact across sectors.</p>
         </section>
         <!-- Add more projects as needed -->
-
-        <section>
-            <h2>Datasets</h2>
-
-            <div class="dataset-section">
-                <h3>Movie Reviews and Product Reviews - Amazon</h3>
-                <p>The archive contains the following three datasets: Product Reviews, Movie Reviews, and Polarity Assignment Test Data, all containing data from amazon.com. Partial annotation performed by Alexandru Cristian Cosma, Vlad Vasile Itu, and Darius Suciu, 2014. Further information can be found in the Readme.txt files in the archive folders.</p>
-                <p><b>Datasets employed in:</b> Alexandru Cristian Cosma, Vlad Vasile Itu, and Darius Suciu, "Unsupervised domain independent opinion extraction", awarded first prize at the Computer Science Students Conference 2014, CS Department, Technical University of Cluj-Napoca.</p>
-                <p class="download-link"><a href="https://keg.utcluj.ro/datasets/cosma_itu_suciu.zip">Download: Amazon Reviews Sentiment Analysis</a></p>
-            </div>
-
-            <div class="dataset-section">
-                <h3>Movie Reviews (Romanian)</h3>
-                <p>The data have been manually collected from 4 different Romanian movie sites/blogs: <a href="http://filme-carti.ro/" target="_blank">filme-carti.ro</a>, <a href="http://cineblog.info" target="_blank">cineblog.info</a>, <a href="http://procinema.ro" target="_blank">procinema.ro</a>, and <a href="http://filmblog.ro" target="_blank">filmblog.ro</a>.</p>
-                <p>The reviews have been divided into two classes: positive and negative. The dataset contains 1000 documents: 500 positive and 500 negative. The data has been manually annotated for the task of sentiment analysis.</p>
-                <p><b>Datasets employed in:</b> Roxana Russu and Oana Luminita Vlad, "Applying Opinion Mining Learning Techniques for Romanian Language", mention at the Computer Science Students Conference 2014, CS Department, Technical University of Cluj-Napoca.</p>
-                <p class="download-link"><a href="https://keg.utcluj.ro/datasets/russu_vlad.zip">Download: Movie Reviews Romanian</a></p>
-            </div>
-        </section>
-
-
+    </section>
     </main>
 
     <!-- Footer placeholder -->
@@ -177,7 +149,6 @@
                 .catch(error => console.error('Error loading footer:', error));
         });
     </script>
-
 
 </body>
 </html>
